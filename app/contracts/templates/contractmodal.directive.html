@@ -1,0 +1,35 @@
+<div class="modal fade" id="viewdetail" tabindex="-1" role="dialog" aria-labelledby="viewdetailLabel" aria-hidden="false">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">{{conts.viewContract.name}}</h4>
+      </div>
+      <div class="modal-body">
+      	<table class="table">
+      		<tr><td>Location</td><td><input class="form-control" ng-model="conts.viewContract.location" /></td></tr>
+      		<tr><td>Day rate</td><td><input class="form-control" ng-model="conts.viewContract.dayrate" /></td></tr>
+      		<tr><td>Duration</td><td><input class="form-control" ng-model="conts.viewContract.duration" /></td></tr>
+          <tr><td>Permalink</td><td><input class="form-control" ng-model="conts.viewContract.url" /></td></tr>
+          <tr><td>Recruiter</td><td><input class="form-control" ng-model="conts.viewContract.recruiter" /></td></tr>
+          <tr><td>Recruiter Tel</td><td><input class="form-control" ng-model="conts.viewContract.recruitertel" /></td></tr>
+          <tr><td>Application date</td><td>
+            <div class="input-group date datetimepicker">
+              <input class="form-control" ng-model="conts.viewContract.appdate" />
+              <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+            </div>
+          </td></tr>
+
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" ng-click=conts.updateContract()>Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

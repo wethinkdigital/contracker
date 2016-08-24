@@ -11,7 +11,7 @@
 	function contractsCtrl(contractsServ){
 
 		var vm = this;
-		vm.pageTitle = 'Contracts';
+		vm.pageTitle = 'App1';
 		vm.newContract = {};
 		vm.viewContract = {};
 		vm.updateContract = updateContract;
