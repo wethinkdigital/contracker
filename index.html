@@ -47,30 +47,24 @@
 	<div class="row">
 		<div class="col-xs-8 col-xs-offset-2">
 
-			<p>Ang test: {{1+2}}</p>
+				<h1>{{conts.pageTitle}}</h1>
+				<ul class="list-group">
+					<li ng-repeat="(key,contract) in conts.contracts" class="list-group-item"  >
+						<span ng-click=conts.getContract(contract.$id) data-toggle="modal" data-target="#contractModal">{{contract.name}}, {{contract.location}} ({{contract.dayrate}})</span>
+            <span aria-hidden="true" class="pull-right" ng-click=conts.deleteContract(contract.$id)>&times;</span>
+					</li>
+				</ul>
 
-				<div >
-
-					<h1>{{conts.pageTitle}}</h1>
-					<ul class="list-group">
-						<li ng-repeat="(key,contract) in conts.contracts" class="list-group-item"  >
-							<span ng-click=conts.getContract(contract.$id) data-toggle="modal" data-target="#viewdetail">{{contract.name}}</span>
-              <span aria-hidden="true" class="pull-right" ng-click=conts.deleteContract(contract.$id)>&times;</span>
-						</li>
-					</ul>
-				</div>
 		</div>
-
 	</div>
 </div>
 
 <div class="container">
   <div class="row">
     <div class="col-xs-8 col-xs-offset-2">
-    <input type="text" ng-model="conts.newContract.name" placeholder="Role">
-    <input type="text" ng-model="conts.newContract.duration" placeholder="Duration">
-    <input type="text" ng-model="conts.newContract.dayrate" placeholder="Day Rate">
-    <input type="button" class="btn btn-primary" value="Save" ng-click="conts.saveContract()">
+
+      <input type="button" class="btn btn-primary" value="New contract" data-toggle="modal" data-target="#contractModal" ng-click="conts.thisContract = {}">
+    
     </div>    
   </div>
 </div>

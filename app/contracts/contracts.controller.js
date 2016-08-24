@@ -12,30 +12,26 @@
 
 		var vm = this;
 		vm.pageTitle = 'App1';
-		vm.newContract = {};
-		vm.viewContract = {};
+		vm.thisContract = {};
+
+		vm.createContract = createContract;
+		vm.contracts = contractsServ.getAll();
+		vm.getContract = getContract;
 		vm.updateContract = updateContract;
 		vm.deleteContract = deleteContract;
 
-		vm.contracts = contractsServ.getAll();
-		vm.getContract = getContract;
-
-		vm.createContract = createContract;
-
-		
 
 		function getContract(key){
-			vm.viewContract = contractsServ.getContract(key);
+			vm.thisContract = contractsServ.getContract(key);
 		}	
 
 		function createContract() {
-			var newContract = contractsServ.createContract(vm.newContract);
-			vm.newContract = {};
-			return newContract;
+			contractsServ.createContract(vm.thisContract);
+			vm.thisContract = {};
 		}
 
 		function updateContract(){
-			return contractsServ.updateContract(vm.viewContract);
+			return contractsServ.updateContract(vm.thisContract);
 		}
 
 		function deleteContract(key){

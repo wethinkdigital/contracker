@@ -18,7 +18,7 @@
 			contractObj: contractObj,
 			getAll: getContracts,
 			getContract: getContract,
-			createThis: createContract,
+			createContract: createContract,
 			updateContract: updateContract,
 			deleteContract: deleteContract,
 		};
@@ -34,7 +34,6 @@
 			this.recruitertel = data.recruitertel || '';
 			this.url = data.url || '';
 			this.appdate = data.appdate || '';
-
 		}
 
 		function getContracts(){
@@ -47,17 +46,16 @@
 			return $firebaseObject(ref);
 		}
 
-		function createContract(newContract){
+		function createContract(data){
+			var createContract = new this.contractObj(data);
 			var newPostKey = firebase.database().ref('contracts/').push().key;
-			firebase.database().ref('contracts/'+newPostKey).set(newContract);
+			firebase.database().ref('contracts/'+newPostKey).set(createContract);
 			return newPostKey;
 		}
 
 		function updateContract(data){
-
 			var updateContract = new this.contractObj(data);
 			firebase.database().ref('contracts/'+data.$id).update(updateContract);
-
 		}
 		
 		function deleteContract(key){
