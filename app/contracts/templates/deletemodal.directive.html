@@ -1,0 +1,22 @@
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="contractModalLabel" aria-hidden="false">
+
+  <div class="modal-dialog" role="document">
+    <div class="modal-content panel-danger">
+      <div class="modal-header">
+        <h4 class="modal-title" >Are you sure?</h4>
+      </div>
+
+
+      <div class="modal-body">
+        <p>Delete {{conts.thisContract.metrics.name}}?</p>
+      </div>
+
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click=conts.deleteContract(conts.thisContract.$id)>Delete</button>
+
+      </div>
+    </div>
+  </div>
+</div>

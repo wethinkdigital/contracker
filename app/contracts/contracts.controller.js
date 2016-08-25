@@ -11,10 +11,10 @@
 	function contractsCtrl(contractsServ){
 
 		var vm = this;
-		vm.pageTitle = 'Contracts';
+		vm.pageTitle = 'app1';
 		vm.thisContract = {};
 
-		//vm.contractFields = new contractsServ.contractObj({});
+		vm.contractFields = new contractsServ.contractObj({});
 
 		vm.createContract = createContract;
 		vm.contracts = contractsServ.getAll();
@@ -38,6 +38,7 @@
 
 		function deleteContract(key){
 			return contractsServ.deleteContract(key);
+			vm.thisContract = {};
 		}
 
 	}

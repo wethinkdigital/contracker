@@ -8,21 +8,21 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-        <h4 class="modal-title" id="myModalLabel"><input class="form-control" ng-model="conts.thisContract.name" /></h4>
+        <h4 class="modal-title" id="myModalLabel"><input class="form-control" ng-model="conts.thisContract.metrics.name" /></h4>
       </div>
 
 
       <div class="modal-body">
 
         <ul class="nav nav-tabs" id="tabContent">
-            <li class="active"><a href="#metrics" data-toggle="tab">Metrics</a></li>
-            <li><a href="#recruiter" data-toggle="tab">Recruiter</a></li>
-            <li><a href="#client" data-toggle="tab">Client</a></li>
+            <li class="active"><a href="#contractModalMetrics" data-toggle="tab">Metrics</a></li>
+            <li><a href="#contractModalRecruiter" data-toggle="tab">Recruiter</a></li>
+            <li><a href="#contractModalClient" data-toggle="tab">Client</a></li>
         </ul>
 
         <div class="tab-content">
 
-          <div class="tab-pane active" id="metrics">
+          <div class="tab-pane active" id="contractModalMetrics">
 
             <div class="input-group">
               <input class="form-control" placeholder="Location" ng-model="conts.thisContract.metrics.location" />
@@ -46,7 +46,7 @@
           </div>
 
 
-          <div class="tab-pane" id="recruiter">
+          <div class="tab-pane" id="contractModalRecruiter">
 
             <div class="input-group">
               <input class="form-control" placeholder="Name" ng-model="conts.thisContract.recruiter.name" />
@@ -67,7 +67,7 @@
           </div>
 
 
-          <div class="tab-pane" id="client">
+          <div class="tab-pane" id="contractModalClient">
 
             <div class="input-group">
               <input class="form-control" placeholder="name" ng-model="conts.thisContract.client.name" />
@@ -82,7 +82,10 @@
 
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        
+        <a href="#contractModalMetrics" data-toggle="tab">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        </a>
         <button type="button" class="btn btn-primary" data-dismiss="modal" ng-show=conts.thisContract.$id ng-click=conts.updateContract()>Save changes</button>
         <button type="button" class="btn btn-primary" data-dismiss="modal" ng-hide=conts.thisContract.$id ng-click=conts.createContract()>Create</button>
       </div>
