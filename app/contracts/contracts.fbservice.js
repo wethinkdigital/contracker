@@ -10,10 +10,6 @@
 
 	function contractsServ($firebaseAuth,$firebaseObject,$firebaseArray){
 
-
-
-
-
 		var service = {
 			contractObj: contractObj,
 			getAll: getContracts,
@@ -26,14 +22,21 @@
 		return service;
 
 		function contractObj(data){
-			this.name = data.name || '';
-			this.location = data.location || '';
-			this.duration = data.duration || '';
-			this.dayrate = data.dayrate || '';
-			this.recruiter = data.recruiter || '';
-			this.recruitertel = data.recruitertel || '';
-			this.url = data.url || '';
-			this.appdate = data.appdate || '';
+			this.metrics.name = data.metrics.name || '';
+			this.metrics.location = data.metrics.location || '';
+			this.metrics.duration = data.metrics.duration || '';
+			this.metrics.dayrate = data.metrics.dayrate || '';
+			this.metrics.appdate = data.metrics.appdate || '';
+
+			this.recruiter.name = data.recruiter.name || '';
+			this.recruiter.business = data.recruiter.business || '';
+			this.recruiter.email = data.recruiter.email || '';
+			this.recruiter.tel = data.recruiter.tel || '';
+			
+			this.client.name = data.client.name || ''; 
+			this.client.url = data.client.url || ''; 
+
+			this.spec.url = data.spec.url || '';
 		}
 
 		function getContracts(){

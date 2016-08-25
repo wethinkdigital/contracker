@@ -50,7 +50,7 @@
 				<h1>{{conts.pageTitle}}</h1>
 				<ul class="list-group">
 					<li ng-repeat="(key,contract) in conts.contracts" class="list-group-item"  >
-						<span ng-click=conts.getContract(contract.$id) data-toggle="modal" data-target="#contractModal">{{contract.name}}, {{contract.location}} ({{contract.dayrate}})</span>
+						<span ng-click=conts.getContract(contract.$id) data-toggle="modal" data-target="#contractModal">{{contract.metrics.name}}, {{contract.metrics.location}} ({{contract.metrics.dayrate}})</span>
             <span aria-hidden="true" class="pull-right" ng-click=conts.deleteContract(contract.$id)>&times;</span>
 					</li>
 				</ul>
@@ -62,6 +62,8 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-8 col-xs-offset-2">
+
+    {{conts.contractFields | json}}
 
       <input type="button" class="btn btn-primary" value="New contract" data-toggle="modal" data-target="#contractModal" ng-click="conts.thisContract = {}">
     

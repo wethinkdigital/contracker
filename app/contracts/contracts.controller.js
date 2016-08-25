@@ -11,8 +11,10 @@
 	function contractsCtrl(contractsServ){
 
 		var vm = this;
-		vm.pageTitle = 'App1';
+		vm.pageTitle = 'Contracts';
 		vm.thisContract = {};
+
+		//vm.contractFields = new contractsServ.contractObj({});
 
 		vm.createContract = createContract;
 		vm.contracts = contractsServ.getAll();
