@@ -18,11 +18,11 @@
 		$stateProvider
 		.state('home', {
 			url: "/",
-			templateUrl: "/app/contracts/templates/contracts.html"
+			templateUrl: "app/contracts/templates/contracts.html"
 		})
 		.state('recruiters', {
 			url: "/recruiters",
-			templateUrl: "/app/recruiters/templates/recruiters.html"
+			templateUrl: "app/recruiters/templates/recruiters.html"
 		});
 
 
