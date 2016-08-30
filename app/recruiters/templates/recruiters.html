@@ -1,1 +1,19 @@
-<h2>Recruiters baby</h2>
+<h4>Recruiters</h4>
+
+<div ng-controller="recruitersCtrl as recs">
+
+
+<ul class="list-group">
+	<li ng-repeat="(key,recruiter) in recs.recruiters" class="list-group-item"  >
+		<span ng-click=recs.getRecruiter(recruiter.$id) data-toggle="modal" data-target="#recruiterModal">{{recruiter.metrics.name}}, {{recruiter.metrics.company}} {{recruiter.metrics.tel}}<span ng-show="recruiter.metrics.tel && recruiter.metrics.mobile"> / </span>{{recruiter.metrics.mobile}}</span>
+ 		<span aria-hidden="true" class="pull-right" data-toggle="modal" data-target="#deleteRecruiterModal" ng-click="recs.thisRecruiter = recruiter">&times;</span>
+	</li>
+</ul>
+
+<input type="button" class="btn btn-primary" value="New recruiter" data-toggle="modal" data-target="#recruiterModal" ng-click="recs.thisRecruiter = {}">
+
+
+<recruiter-modal></recruiter-modal>
+<delete-recruiter-modal></delete-recruiter-modal>
+
+</div>

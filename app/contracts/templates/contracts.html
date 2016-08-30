@@ -1,3 +1,7 @@
+<h4>Contracts</h4>
+
+<div ng-controller="contractsCtrl as conts">
+
 <ul class="list-group">
 	<li ng-repeat="(key,contract) in conts.contracts" class="list-group-item"  >
 		<span ng-click=conts.getContract(contract.$id) data-toggle="modal" data-target="#contractModal">{{contract.metrics.name}}, {{contract.metrics.location}} ({{contract.metrics.dayrate}})</span>
@@ -8,6 +12,6 @@
 <input type="button" class="btn btn-primary" value="New contract" data-toggle="modal" data-target="#contractModal" ng-click="conts.thisContract = {}">
 
 <contract-modal></contract-modal>
-<delete-modal></delete-modal>
+<delete-contract-modal></delete-contract-modal>
 
-{{conts.contractFields| json}}
+</div>

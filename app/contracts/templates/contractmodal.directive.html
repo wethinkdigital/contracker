@@ -24,43 +24,46 @@
 
           <div class="tab-pane active" id="contractModalMetrics">
 
-            <div class="input-group">
+            <div class="form-group">
               <input class="form-control" placeholder="Location" ng-model="conts.thisContract.metrics.location" />
             </div>
-            <div class="input-group">
+            <div class="form-group">
               <input class="form-control" placeholder="Day rate" ng-model="conts.thisContract.metrics.dayrate" />
             </div>
-            <div class="input-group">
+            <div class="form-group">
               <input class="form-control" placeholder="Contract length" ng-model="conts.thisContract.metrics.duration" />
-            </div>            
-            <div class="input-group">
-              <input class="form-control" placeholder="Specification" ng-model="conts.thisContract.metrics.spec" />
+            </div> 
+            <label ng-click="spectextarea = !spectextarea">Specification</label>           
+            <div class="form-group" ng-init="textarea = false">
+              <input ng-hide="spectextarea" class="form-control" placeholder="Specification" ng-model="conts.thisContract.metrics.spec" />
+              <textarea rows="6" ng-show="spectextarea" class="form-control" placeholder="Specification" ng-model="conts.thisContract.metrics.spec" ></textarea>
             </div>
             <div class="input-group date datetimepicker">
               <input class="form-control" placeholder="Application date" ng-model="conts.thisContract.metrics.appdate" />
-              <span class="input-group-addon">
+              <span class="form-group-addon">
                 <span class="glyphicon glyphicon-calendar"></span>
               </span>
             </div>
+
 
           </div>
 
 
           <div class="tab-pane" id="contractModalRecruiter">
 
-            <div class="input-group">
+            <div class="form-group">
               <input class="form-control" placeholder="Name" ng-model="conts.thisContract.recruiter.name" />
             </div>
-            <div class="input-group">
+            <div class="form-group">
               <input class="form-control" placeholder="Company" ng-model="conts.thisContract.recruiter.company" />
             </div>
-            <div class="input-group">
+            <div class="form-group">
               <input class="form-control" placeholder="Website" ng-model="conts.thisContract.recruiter.url" />
             </div>            
-            <div class="input-group">
+            <div class="form-group">
               <input class="form-control" placeholder="Tel" ng-model="conts.thisContract.recruiter.tel" />
             </div>
-            <div class="input-group">
+            <div class="form-group">
               <input class="form-control" placeholder="Email" ng-model="conts.thisContract.recruiter.email" />
             </div>
 
@@ -69,10 +72,10 @@
 
           <div class="tab-pane" id="contractModalClient">
 
-            <div class="input-group">
+            <div class="form-group">
               <input class="form-control" placeholder="name" ng-model="conts.thisContract.client.name" />
             </div>
-            <div class="input-group">
+            <div class="form-group">
               <input class="form-control" placeholder="website" ng-model="conts.thisContract.client.url" />
             </div>
 
@@ -92,3 +95,4 @@
     </div>
   </div>
 </div>
+

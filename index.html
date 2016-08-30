@@ -21,6 +21,20 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+
+  <!-- Jasmine -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.3/jasmine.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.3/jasmine.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.3/jasmine-html.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.3/boot.min.js"></script>
+
+
 
 
   <!-- Firebase -->
@@ -28,13 +42,38 @@
   <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
 
   <script>
-    var config = {
-      apiKey: "AIzaSyCDIUnoCXfw96VgFQT_oHq3Yw8WeUtndfE",
-      authDomain: "contracker-51118.firebaseapp.com",
-      databaseURL: "https://contracker-51118.firebaseio.com",
-      storageBucket: "contracker-51118.appspot.com",
+    var live = {
+      config: {
+        apiKey: "AIzaSyCDIUnoCXfw96VgFQT_oHq3Yw8WeUtndfE",
+        authDomain: "contracker-51118.firebaseapp.com",
+        databaseURL: "https://contracker-51118.firebaseio.com",
+        storageBucket: "contracker-51118.appspot.com",
+      },
+      projectName: "Contracker"
     };
-    firebase.initializeApp(config);
+
+    var dev = {
+      config: {
+        apiKey: "AIzaSyDU9_U4cE7gECW1pu03o6sxjHa0ipnbTSY",
+        authDomain: "contrackerdev-46489.firebaseapp.com",
+        databaseURL: "https://contrackerdev-46489.firebaseio.com",
+        storageBucket: "contrackerdev-46489.appspot.com",
+      },
+      projectName: "ContrackerDev"
+    };
+
+    /*--------------------------------*\
+    |
+    | Define app root 
+    |
+    \*--------------------------------*/
+
+    var useconfig = dev;
+
+
+
+    firebase.initializeApp(useconfig.config);
+
   </script>
 
   <!-- App -->
@@ -42,15 +81,46 @@
   <script type="text/javascript" src="app/contracts/contracts.controller.js"></script>
   <script type="text/javascript" src="app/contracts/contracts.fbservice.js"></script>
   <script type="text/javascript" src="app/contracts/contracts.directives.js"></script>
+  <script type="text/javascript" src="app/recruiters/recruiters.controller.js"></script>
+  <script type="text/javascript" src="app/recruiters/recruiters.fbservice.js"></script>
+  <script type="text/javascript" src="app/recruiters/recruiters.directives.js"></script>
 
 </head>
-<body ng-app="contracker" ng-controller="contractsCtrl as conts">
+<body ng-app="contracker">
 
 <div class="container" >
 	<div class="row">
-		<div class="col-xs-8 col-xs-offset-2">
+		<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-xs-offset-0">
 
-				<h1>{{conts.pageTitle}}</h1>
+
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <!-- Logo -->
+              <a class="navbar-brand" href="#">
+                <script>(function(){ document.write(useconfig.projectName) })();</script>
+              </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li><a href="#contracts">Contracts</a></li>
+                <li><a href="#recruiters">Recruiters</a></li>
+              </ul>
+            </div>
+
+
+            </div>
+          </div>
+        </nav>
 
     </div>
   </div>
@@ -73,8 +143,6 @@
         $('.datetimepicker').datetimepicker();
     });
 </script>
-
-
 
 
 

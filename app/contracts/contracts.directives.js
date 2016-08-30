@@ -3,7 +3,7 @@
 	angular
 	.module('contracker')
 	.directive('contractModal',contractModal)
-	.directive('deleteModal',deleteModal);
+	.directive('deleteContractModal',deleteContractModal);
 
 	function contractModal(){
 		
@@ -16,11 +16,11 @@
 
 	}
 
-	function deleteModal(){
+	function deleteContractModal(){
 		
 		var directive = {
 			replace: 'true',
-			templateUrl: '/app/contracts/templates/deletemodal.directive.html'
+			templateUrl: '/app/contracts/templates/deletecontractmodal.directive.html'
 		};
 
 		return directive;

@@ -37,8 +37,8 @@
 		}
 
 		function deleteContract(key){
-			return contractsServ.deleteContract(key);
 			vm.thisContract = {};
+			return contractsServ.deleteContract(key);
 		}
 
 	}

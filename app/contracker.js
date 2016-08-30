@@ -6,7 +6,8 @@
 	.module('contracker',[
 
 		"firebase",
-		"ui.router"
+		"ui.router",
+		"ngMaterial"
 		
 	])
 	.config(function($stateProvider, $urlRouterProvider) {
