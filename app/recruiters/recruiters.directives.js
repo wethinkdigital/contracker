@@ -9,7 +9,7 @@
 		
 		var directive = {
 			replace: 'true',
-			templateUrl: '/app/recruiters/templates/recruitermodal.directive.html'
+			templateUrl: 'app/recruiters/templates/recruitermodal.directive.html'
 		};
 
 		return directive;
@@ -20,7 +20,7 @@
 		
 		var directive = {
 			replace: 'true',
-			templateUrl: '/app/recruiters/templates/deleterecruitermodal.directive.html'
+			templateUrl: 'app/recruiters/templates/deleterecruitermodal.directive.html'
 		};
 
 		return directive;

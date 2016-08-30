@@ -9,7 +9,7 @@
 		
 		var directive = {
 			replace: 'true',
-			templateUrl: '/app/contracts/templates/contractmodal.directive.html'
+			templateUrl: 'app/contracts/templates/contractmodal.directive.html'
 		};
 
 		return directive;
@@ -20,7 +20,7 @@
 		
 		var directive = {
 			replace: 'true',
-			templateUrl: '/app/contracts/templates/deletecontractmodal.directive.html'
+			templateUrl: 'app/contracts/templates/deletecontractmodal.directive.html'
 		};
 
 		return directive;
